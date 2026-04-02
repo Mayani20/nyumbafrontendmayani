@@ -1,23 +1,3 @@
-// import axios from '@/lib/axios'
-
-// export const api = {
-// //   getLanding: (params?: any) =>
-// //     axios.get('/api/tenant/properties/landing', { params }),
-
-//   getUsers: () =>
-//     axios.get('/api/users'),
-
-//   getPropertyImages: (ids: number[]) =>
-//     axios.post('/api/properties/images', { property_ids: ids }),
-// }
-
-
-
-
-
-
-
-
 import axios from "@/lib/axios";
 
 export const api = {
@@ -30,6 +10,8 @@ export const api = {
   healthCheck: () => axios.get("/"),
   weatherForecast: () => axios.get("/weatherforecast"),
 
-  // NOTE: The following endpoints are NOT available in your backend yet:
-  // getLanding, getProperties, getPropertyById, getUsers, getPropertyImages
+   getLanding: (params?: { location?: string }) =>
+    axios.get("/api/tenant/properties/landing", { params }),
+
+
 };
